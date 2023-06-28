@@ -58,8 +58,66 @@ const posts = [
 
 
 for (let i = 0; i < posts.length; i++) {
-    const element = posts[i];
+    const object = posts[i];
 
-    console.log(i, element);
+    // console.log(i, object);
+
+    for (const key in object) {
+        console.log(object[key]);
+    }
+
+
+    const postsContainer = document.querySelector('.posts-list');
+
+    postsContainer.innerHTML+= `
+
+    <div class="post">
+            <div class="post__header">
+                <div class="post-meta">                    
+                    <div class="post-meta__icon">
+                        <img class="profile-pic" src="${object.author['image']}" alt="${object.author['name']}">                    
+                    </div>
+                    <div class="post-meta__data">
+                        <div class="post-meta__author">${object.author['name']}</div>
+                        <div class="post-meta__time">${object['date']}</div>
+                    </div>                    
+                </div>
+            </div>
+            <div class="post__text">${object['content']}</div>
+            <div class="post__image">
+                <img src="${object['media']}" alt="">
+            </div>
+            <div class="post__footer">
+                <div class="likes js-likes">
+                    <div class="likes__cta">
+                        <a class="like-button  js-like-button" href="#" data-postid="${object['id']}">
+                            <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                            <span class="like-button__label">Mi Piace</span>
+                        </a>
+                    </div>
+                    <div class="likes__counter">
+                        Piace a <b id="like-counter-1" class="js-likes-counter">${object['likes']}</b> persone
+                    </div>
+                </div> 
+            </div>            
+        </div>
     
+    
+    
+    
+    `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
