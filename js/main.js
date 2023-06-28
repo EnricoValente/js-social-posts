@@ -57,13 +57,14 @@ const posts = [
 ];
 
 
+
 for (let i = 0; i < posts.length; i++) {
     const object = posts[i];
 
     // console.log(i, object);
 
     for (const key in object) {
-        console.log(object[key]);
+        // console.log(object[key]);
     }
 
 
@@ -90,7 +91,7 @@ for (let i = 0; i < posts.length; i++) {
             <div class="post__footer">
                 <div class="likes js-likes">
                     <div class="likes__cta">
-                        <a class="like-button  js-like-button" href="#" data-postid="${object['id']}">
+                        <a class="like-button" href="#" data-postid="${object['id']}">
                             <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                             <span class="like-button__label">Mi Piace</span>
                         </a>
@@ -107,7 +108,44 @@ for (let i = 0; i < posts.length; i++) {
     
     `
 
+    const likeButton = document.querySelector('.like-button');
 
+    let count = 0;
+    
+    const allLinks = document.querySelectorAll('.like-button');
+    console.log(allLinks[count]);
+
+  
+    
+   
+
+    likeButton.addEventListener('click', function() {
+
+        if (count == 0) {
+
+            allLinks[count].classList.add('like-button--liked');
+            
+        }
+       
+                
+                
+
+        
+            
+        
+
+            
+            
+
+
+
+        
+        
+       
+
+       
+       
+    })
 
 
 
