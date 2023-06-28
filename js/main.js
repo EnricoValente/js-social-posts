@@ -55,3 +55,11 @@ const posts = [
         date: "2021-03-05"
     }
 ];
+
+
+for (let i = 0; i < posts.length; i++) {
+    const element = posts[i];
+
+    console.log(i, element);
+    
+}
