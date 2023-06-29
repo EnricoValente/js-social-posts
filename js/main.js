@@ -108,44 +108,42 @@ for (let i = 0; i < posts.length; i++) {
     
     `
 
-    const likeButton = document.querySelector('.like-button');
-
-    let count = 0;
     
-    const allLinks = document.querySelectorAll('.like-button');
-    console.log(allLinks[count]);
+
+    
+    
+    const allButtons = document.querySelectorAll('.like-button');
+    console.log(allButtons);
+
+    allButtons.forEach(singleButton => {
+        console.log(singleButton);
+
+        singleButton.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            console.log('cliccato bottone');
+
+            if (!singleButton.classList.contains('like-button--liked')) {
+
+                singleButton.classList.add('like-button--liked');
+                
+            }
+
+
+            
+            
+        })
+        
+    });
+
+
+
 
   
     
    
 
-    likeButton.addEventListener('click', function() {
-
-        if (count == 0) {
-
-            allLinks[count].classList.add('like-button--liked');
-            
-        }
-       
-                
-                
-
-        
-            
-        
-
-            
-            
-
-
-
-        
-        
-       
-
-       
-       
-    })
+    
 
 
 
